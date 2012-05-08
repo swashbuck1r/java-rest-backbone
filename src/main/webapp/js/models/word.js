@@ -9,7 +9,6 @@ define([
     },
     url : function() {
       var base = 'rest/words';
-      alert("this.isNew(): " + this.isNew());
       if (this.isNew()) return base;
       return base + (base.charAt(base.length - 1) == '/' ? '' : '/') + this.id;
     }
