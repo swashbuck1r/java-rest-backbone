@@ -13,6 +13,7 @@ import example.rest.local.DictionaryLocalModule;
 
 public class GuiceRestConfig extends GuiceServletContextListener {
     private ServletContext sc;
+
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         this.sc = servletContextEvent.getServletContext();
         super.contextInitialized(servletContextEvent);
@@ -20,18 +21,15 @@ public class GuiceRestConfig extends GuiceServletContextListener {
 
     @Override
     protected Injector getInjector() {
-
         AbstractModule dictionaryModule = loadDictionaryModule();
-
         return Guice.createInjector(new RestModule(), dictionaryModule);
     }
 
     private AbstractModule loadDictionaryModule() {
         String mode = this.sc.getInitParameter("mode");
-        if(mode != null && mode.equals("test")) {
+        if (mode != null && mode.equals("test")) {
             return new DictionaryLocalModule();
-        }
-        else {
+        } else {
             return new DictionaryDBModule();
         }
     }

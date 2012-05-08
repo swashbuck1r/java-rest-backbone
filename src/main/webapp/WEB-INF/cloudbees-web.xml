@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<cloudbees-web-app xmlns="http://www.cloudbees.com/xml/webapp/1">
+  <appid>cloudbees/run-console</appid>
+
+  <environment name="local">
+    <context-param>
+      <param-name>mode</param-name>
+      <param-value>test</param-value>
+    </context-param>
+  </environment>
+</cloudbees-web-app>

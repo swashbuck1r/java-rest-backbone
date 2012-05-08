@@ -1,14 +1,17 @@
-package example.rest;
+package example.rest.local;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class DictionaryService implements IDictionaryService {
+import example.rest.IDictionaryService;
+import example.rest.Word;
+
+public class DictionaryMemService implements IDictionaryService {
     Map<String, Word> words = new TreeMap<String, Word>();
 
-    DictionaryService() {
+    DictionaryMemService() {
         addWord("dog",
                 "A domesticated carnivorous mammal that typically has a long snout, an acute sense of smell, and a barking, howling, or whining voice. It is widely kept as a pet or for work or field sports.",
                 "noun");
@@ -23,32 +26,23 @@ public class DictionaryService implements IDictionaryService {
         words.put(word, w);
         return w;
     }
-    
-    /* (non-Javadoc)
-     * @see example.rest.IDictionaryService#addWord(example.rest.Word)
-     */
+
     @Override
     public Word addWord(Word w) {
-        if(words.containsKey(w.word)){
+        if (words.containsKey(w.word)) {
             throw new IllegalArgumentException("Word already exists: " + w.word);
         }
-        
+
         Word newWord = new Word(w.word, w.definition, w.type);
         words.put(w.word, newWord);
         return newWord;
     }
 
-    /* (non-Javadoc)
-     * @see example.rest.IDictionaryService#getWord(java.lang.String)
-     */
     @Override
     public Word getWord(String word) {
         return words.get(word);
     }
 
-    /* (non-Javadoc)
-     * @see example.rest.IDictionaryService#getWords()
-     */
     @Override
     public List<Word> getWords() {
         return new ArrayList(words.values());

@@ -24,10 +24,12 @@ define([
     },
     
     showManage: function() {
+      $("#page").unbind();
       this.navigate("manageWords", true);
     },
 
     listWords: function() {
+      $("#page").unbind();
       require(['views/word_list'], function (ListView) {
         new ListView().render();
       });
@@ -39,6 +41,7 @@ define([
     },
 
     wordDetail: function(id) {
+      $("#page").unbind();
       require(['views/word_detail'], function (WordDetailView) {
         this.word = wordList.get(id);
         var wordDetailView = new WordDetailView({model:this.word});

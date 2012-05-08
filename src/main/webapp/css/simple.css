@@ -1,0 +1,7 @@
+
+html body { padding-top: 0px; }
+.navbar ul li, .navbar ul { display: inline; }
+
+.sidebar-nav { float: left; }
+.sidebar-nav li { list-style: none; }
+#page { margin: 0px 50px 0px 275px; }
