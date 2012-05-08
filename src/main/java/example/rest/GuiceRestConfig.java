@@ -27,10 +27,10 @@ public class GuiceRestConfig extends GuiceServletContextListener {
 
     private AbstractModule loadDictionaryModule() {
         String mode = this.sc.getInitParameter("mode");
-        if (mode != null && mode.equals("test")) {
-            return new DictionaryLocalModule();
-        } else {
+        if (mode != null && mode.equals("db")) {
             return new DictionaryDBModule();
+        } else {
+            return new DictionaryLocalModule();
         }
     }
 }
