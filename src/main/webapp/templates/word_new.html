@@ -1,0 +1,42 @@
+<!-- Forms
+================================================== -->
+<section id="forms">
+  <div class="page-header">
+    <h1>New Word</h1>
+  </div>
+  <div class="row">
+    <div class="span9">
+      <form class="well">
+        <fieldset>
+          <legend>Enter a new definition</legend>
+          <div class="control-group">
+            <label class="control-label" for="xlInput">Word</label>
+            <div class="controls">
+              <input class="input-xlarge" id="word" name="word" size="30" type="text" />
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="xlInput">Definition</label>
+            <div class="controls">
+              <textarea class="input-xlarge" id="definition" name="definition"></textarea>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="normalSelect">Select</label>
+            <div class="controls">
+              <select class="input-xlarge" name="type" id="type">
+                <option>Noun</option>
+                <option>Verb</option>
+                <option>Exclamation</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button id="save_word" class="btn btn-primary" type="submit">Create</button>
+            <button class="btn">Cancel</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div><!-- /row -->
+
