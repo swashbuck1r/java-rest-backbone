@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class DictionaryService {
+public class DictionaryService implements IDictionaryService {
     Map<String, Word> words = new TreeMap<String, Word>();
 
     DictionaryService() {
@@ -24,6 +24,10 @@ public class DictionaryService {
         return w;
     }
     
+    /* (non-Javadoc)
+     * @see example.rest.IDictionaryService#addWord(example.rest.Word)
+     */
+    @Override
     public Word addWord(Word w) {
         if(words.containsKey(w.word)){
             throw new IllegalArgumentException("Word already exists: " + w.word);
@@ -34,10 +38,18 @@ public class DictionaryService {
         return newWord;
     }
 
+    /* (non-Javadoc)
+     * @see example.rest.IDictionaryService#getWord(java.lang.String)
+     */
+    @Override
     public Word getWord(String word) {
         return words.get(word);
     }
 
+    /* (non-Javadoc)
+     * @see example.rest.IDictionaryService#getWords()
+     */
+    @Override
     public List<Word> getWords() {
         return new ArrayList(words.values());
     }

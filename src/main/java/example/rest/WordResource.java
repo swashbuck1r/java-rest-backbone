@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 @Path("/rest/words")
 public class WordResource {
-    public static DictionaryService dict = new DictionaryService();
+    public static IDictionaryService dict = new DictionaryService();
     @GET
     @Path("{word}")
     public Word getWord(@PathParam("word") String w) {
