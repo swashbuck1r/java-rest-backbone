@@ -12,10 +12,23 @@ Verify it runs locally (this uses in-memory storage by default)
     cd myapp
     mvn bees:run
 
-Deploy the app to CloudBees
+Deploy the app to CloudBees (as WAR)
+--------------------------------------
 
     mvn bees:deploy -Dbees.appid=MY_APPID
 
+
+Deploy the app to CloudBees (as source)
+--------------------------------------
+
+    bees app:create --withCD MY_APPID
+    [... your new CLOUDBEES GIT URL will be printed ...]
+    git remote add cloudbees YOUR_NEW_CLOUDBEES_GIT_URL
+    git push cloudbees master
+
+
+Bind the app to a database
+---------------------------
 Create a database
 
     bees db:create -u MY_DB_USER -p MY_DB_PASS MY_DATABASE_ID
