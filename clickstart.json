@@ -1,0 +1,23 @@
+{
+    "id": "maven-rest-backbone",
+    "name": "Maven - Rest + Backbone.js",
+    "description" : "This shows backbone.js in action with a databased backed RESTful backend",
+    "icon" : "rest-backbone-icon",
+    "source": "git://github.com/swashbuck1r/java-rest-backbone.git",
+    "runtime": {
+        "type": "tomcat"
+    },
+    "databases": [
+        {
+            "type": "mysql",
+            "alias": "jdbc/words"
+        }
+    ],
+    "build-with-jenkins": {
+        "template": {
+            "type": "maven",
+            "options": {
+            }
+        }
+    }
+}
