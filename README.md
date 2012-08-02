@@ -1,7 +1,7 @@
 backbone.js and RESTful backend (JAX-RS)
 ==================
 
-This is a simple starter REST app using backbone.JS for CloudBees.
+This is a simple starter REST app using backbone.JS for CloudBees. This clickstart will create a continuous deployment setup with a database and source repository.
 
 
 
