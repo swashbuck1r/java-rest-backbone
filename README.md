@@ -1,7 +1,12 @@
-java-rest-backbone
+backbone.js and RESTful backend (JAX-RS)
 ==================
 
-A simple Java REST app using backbone.JS for CloudBees.
+This is a simple starter REST app using backbone.JS for CloudBees.
+
+
+
+
+To deploy this manually: 
 
 Clone the app locally
 
