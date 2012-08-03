@@ -1,7 +1,11 @@
 backbone.js and RESTful backend (JAX-RS)
 ==================
 
-This is a simple starter REST app using backbone.JS for CloudBees. This clickstart will create a continuous deployment setup with a database and source repository.
+Backbone.js (http://backbonejs.org/) is a popular lightweight javascript framework for giving structure to complex javascript client side applications. 
+This works nicely with restful frameworks at the back end (the back end is a set of restful services). 
+When you deploy this clickstart, it will create a javascript/backbone app, a source repo with continuous deplopyment via Jenkins, and a database. 
+
+Feel free to use this as a starter project. Launch the clickstart, clone the repo and every change you push will be built and deployed.
 
 
 
@@ -10,7 +14,7 @@ To deploy this manually:
 
 Clone the app locally
 
-    git clone git@github.com:swashbuck1r/java-rest-backbone.git myapp
+    git clone git://github.com/CloudBees-community/java-rest-backbone.git myapp
 
 Verify it runs locally (this uses in-memory storage by default)
 
