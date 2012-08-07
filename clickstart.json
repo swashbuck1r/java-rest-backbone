@@ -4,7 +4,7 @@
     "description" : "This shows backbone.js in action with a database backed RESTful backend and continuous deployment",
     "source": "git://github.com/CloudBees-community/java-rest-backbone.git",    
     "doc-url" : "https://github.com/CloudBees-community/java-rest-backbone/blob/master/README.md",
-    "icon" : "https://github.com/CloudBees-community/java-rest-backbone/blob/master/icon.png",
+    "icon" : "https://raw.github.com/CloudBees-community/java-rest-backbone/master/logo.png",
     
     "runtime": {
         "type": "tomcat"
