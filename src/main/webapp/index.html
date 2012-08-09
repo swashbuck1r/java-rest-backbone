@@ -72,31 +72,6 @@
       </div>
     </div>
 
-        <!-- This section is used for first time display of clickstart -->
-    <script type="text/javascript">
-    var CloudBeesNamespace = (function(){
-      var attachScript = function(path){
-        var newscript = document.createElement('script');
-            newscript.type = 'text/javascript';
-            newscript.async = true;
-            newscript.src = path;
-        (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(newscript);      
-      }
-      var attachCss = function(path){
-        var newLink = document.createElement('link');
-           newLink.type = 'text/css';
-           newLink.href = path;
-           newLink.rel = 'stylesheet';
-        (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(newLink); 
-      } 
-      if(window.location.href.indexOf('CS_appName=') > -1){
-        attachScript('https://s3.amazonaws.com/cloudbees-downloads/clickstart/clickstart_intro.js');  
-      } 
-      return {attachScript:attachScript,attachCss:attachCss};
-    })();   
-    </script> 
-    <!-- end clickstart intro section -->
-
 
   </body>
 </html>
