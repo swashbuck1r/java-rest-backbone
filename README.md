@@ -7,6 +7,7 @@ When you deploy this clickstart, it will create a javascript/backbone app, a sou
 
 Feel free to use this as a starter project. Launch the clickstart, clone the repo and every change you push will be built and deployed.
 
+<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/java-rest-backbone/master/clickstart.json"><img src="https://s3.amazonaws.com/cloudbees-downloads/clickstart/clickstart-now.png"/></a>
 
 
 
