@@ -5,6 +5,7 @@
     "source": "git://github.com/CloudBees-community/java-rest-backbone.git",    
     "doc-url" : "https://github.com/CloudBees-community/java-rest-backbone/blob/master/README.md",
     "icon" : "https://raw.github.com/CloudBees-community/java-rest-backbone/master/icon.png",
+    "app-package" : "https://s3.amazonaws.com/cloudbees-downloads/clickstart/java-rest-backbone-0.0.1-SNAPSHOT.war",
     
     "runtime": {
         "type": "tomcat"
