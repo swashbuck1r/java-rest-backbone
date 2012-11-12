@@ -7,6 +7,9 @@
     "icon" : "https://d3ko533tu1ozfq.cloudfront.net/clickstart/backbone_icon.png",
     "app-package" : "https://s3.amazonaws.com/cloudbees-downloads/clickstart/java-rest-backbone-0.0.1-SNAPSHOT.war",
     
+    "supported-by" : "cloudbees", 
+    "order" : 1,
+
     "runtime": {
         "type": "tomcat"
     },
