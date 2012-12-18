@@ -1,15 +1,15 @@
 backbone.js and RESTful backend (JAX-RS)
 ==================
 
-Backbone.js (http://backbonejs.org/) is a popular lightweight javascript framework for giving structure to complex javascript client side applications. 
+Backbone.js (http://backbonejs.org/) is a popular lightweight javascript framework for giving structure to complex javascript client-side applications. 
 This works nicely with restful frameworks at the back end (the back end is a set of restful services). 
-When you deploy this clickstart, it will create a javascript/backbone app, a source repo with continuous deplopyment via Jenkins, and a database. 
+When you launch this ClickStart, it will create a Javascript/Backbone app, a source repo with continuous deplopyment via Jenkins, and a database.
 
 Feel free to use this as a starter project. Launch the clickstart, clone the repo and every change you push will be built and deployed.
 
-<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/java-rest-backbone/master/clickstart.json"><img src="https://s3.amazonaws.com/cloudbees-downloads/clickstart/clickstart-now.png"/></a>
+<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/java-rest-backbone/master/clickstart.json"><img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly_white.png"/></a>
 
-
+<img src="http://backbonejs.org/docs/images/backbone.png" />
 
 To deploy this manually: 
 
