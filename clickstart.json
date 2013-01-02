@@ -1,7 +1,7 @@
 {
     "id": "maven-rest-backbone",
-    "name": "Backbone.js with a RESTful backend (JAX-RS)",
-    "description" : "Backbone.js in action with a database-backed RESTful backend and continuous deployment",
+    "name": "Backbone.js and JAX-RS",
+    "description" : "Backbone.js with a database-backed RESTful backend and continuous deployment",
     "source": "git://github.com/CloudBees-community/java-rest-backbone.git",    
     "doc-url" : "https://github.com/CloudBees-community/java-rest-backbone/blob/master/README.md",
     "icon" : "https://d3ko533tu1ozfq.cloudfront.net/clickstart/backbone_icon.png",
