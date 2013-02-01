@@ -1,9 +1,9 @@
-backbone.js and RESTful backend (JAX-RS)
+JPA and REST with backbone.js
 ==================
 
 Backbone.js (http://backbonejs.org/) is a popular lightweight javascript framework for giving structure to complex javascript client-side applications. 
 This works nicely with restful frameworks at the back end (the back end is a set of restful services). 
-When you launch this ClickStart, it will create a Javascript/Backbone app, a source repo with continuous deplopyment via Jenkins, and a database.
+When you launch this ClickStart, it will create a Javascript/Backbone app, a source repo with continuous deployment via Jenkins, and a database.
 
 Feel free to use this as a starter project. Launch the clickstart, clone the repo and every change you push will be built and deployed.
 
@@ -45,7 +45,7 @@ Create a database
 
 Bind the database to the app
 
-    bees app:bind -db DATABASE_ID -a MY_APPID -as words
+    bees app:bind -db DATABASE_ID -a MY_APPID -as appdb
 
 Reconfigure the app to run in database mode, instead of in-memory.
 Note: "mode" is looked up as a ServletContext param by the app
