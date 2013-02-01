@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+        http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+
+	<!-- A JPA Persistence Unit -->
+	<persistence-unit name="appPU" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<non-jta-data-source>java:/comp/env/jdbc/appdb</non-jta-data-source>
+
+		<!-- JPA entities must be registered here -->
+		<class>example.rest.db.PersistentWord</class>
+
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+
+			<!-- Default is false for backwards compatibility. Should be used on all 
+				new projects -->
+			<property name="hibernate.id.new_generator_mappings" value="true" />
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="localPU" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<!-- JPA entities must be registered here -->
+		<class>example.rest.db.PersistentWord</class>
+
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:derby:target2/derby;create=true" />
+			<property name="javax.persistence.jdbc.password" value="pass" />
+			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
+			<property name="javax.persistence.jdbc.user" value="user" />
+
+
+			<!-- if this is true, hibernate will print (to stdout) the SQL it executes, 
+				so you can check it to ensure it's not doing anything crazy -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<!-- since most database servers have slightly different versions of the 
+				SQL, Hibernate needs you to choose a dialect so it knows the subtleties of 
+				talking to that server -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect" />
+			<!-- this tell Hibernate to update the DDL when it starts, very useful 
+				for development, dangerous in production -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
+
+</persistence>

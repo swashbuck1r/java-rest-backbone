@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+        http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+  version="1.0">
+
+  <persistence-unit name="testPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+    <!-- JPA entities must be registered here -->
+    <class>example.rest.db.PersistentWord</class>
+
+    <properties>
+      <property name="javax.persistence.jdbc.url"
+        value="jdbc:derby:target/derby-tests;create=true" />
+      <property name="javax.persistence.jdbc.password" value="pass" />
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
+      <property name="javax.persistence.jdbc.user" value="user" />
+
+      <property name="hibernate.show_sql" value="true" />
+      <property name="hibernate.format_sql" value="true" />
+      <!-- since most database servers have slightly different versions of 
+        the SQL, Hibernate needs you to choose a dialect so it knows the subtleties 
+        of talking to that server -->
+      <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect" />
+      <!-- this tell Hibernate to update the DDL when it starts, very useful 
+        for development, dangerous in production -->
+      <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+    </properties>
+  </persistence-unit>
+
+</persistence>

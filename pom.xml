@@ -1,149 +1,187 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.cloudbees</groupId>
-	<artifactId>java-rest-backbone</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+  <groupId>com.cloudbees</groupId>
+  <artifactId>java-rest-backbone</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
 
-	<properties>
-		<!-- dependency versions -->
-		<dep.junit>4.10</dep.junit>
-		<dep.easymock>3.0</dep.easymock>
+  <properties>
+    <!-- dependency versions -->
+    <dep.junit>4.10</dep.junit>
+    <dep.easymock>3.0</dep.easymock>
 
-		<dep.guice>3.0</dep.guice>
-		<dep.jersey>1.12</dep.jersey>
+    <dep.guice>3.0</dep.guice>
+    <dep.jersey>1.12</dep.jersey>
 
-		<dep.jackson>1.9.4</dep.jackson>
+    <dep.jackson>2.1.2</dep.jackson>
 
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+    <hibernate.version>4.1.9.Final</hibernate.version>
+    <hibernate-jpamodelgen.version>1.2.0.Final</hibernate-jpamodelgen.version>
+    <hibernate-jpa-api.version>1.0.1.Final</hibernate-jpa-api.version>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>10.0.1</version>
-		</dependency>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
-			<scope>provided</scope>
-		</dependency>
+  <dependencies>
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>10.0.1</version>
+    </dependency>
 
-		<dependency>
-			<groupId>com.google.inject</groupId>
-			<artifactId>guice</artifactId>
-			<version>${dep.guice}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.google.inject.extensions</groupId>
-			<artifactId>guice-servlet</artifactId>
-			<version>${dep.guice}</version>
-		</dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>2.5</version>
+      <scope>provided</scope>
+    </dependency>
 
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-core</artifactId>
-			<version>${dep.jersey}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-server</artifactId>
-			<version>${dep.jersey}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey.contribs</groupId>
-			<artifactId>jersey-guice</artifactId>
-			<version>${dep.jersey}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-json</artifactId>
-			<version>${dep.jersey}</version>
-		</dependency>
+    <dependency>
+      <groupId>com.google.inject</groupId>
+      <artifactId>guice</artifactId>
+      <version>${dep.guice}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.inject.extensions</groupId>
+      <artifactId>guice-servlet</artifactId>
+      <version>${dep.guice}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.inject.extensions</groupId>
+      <artifactId>guice-persist</artifactId>
+      <version>${dep.guice}</version>
+    </dependency>
 
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-asl</artifactId>
-			<version>${dep.jackson}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>${dep.jackson}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-jaxrs</artifactId>
-			<version>${dep.jackson}</version>
-		</dependency>
-    
-        <dependency>
-          <groupId>org.hibernate</groupId>
-          <artifactId>hibernate-core</artifactId>
-          <version>3.5.1-Final</version>
-        </dependency>
-        <dependency>
-          <groupId>org.hibernate</groupId>
-          <artifactId>hibernate-annotations</artifactId>
-          <version>3.5.1-Final</version>
-        </dependency>
-        
-        <dependency>
-          <groupId>org.slf4j</groupId>
-          <artifactId>slf4j-api</artifactId>
-          <version>1.6.1</version>
-        </dependency>
-        
-        <dependency>
-          <groupId>javassist</groupId>
-          <artifactId>javassist</artifactId>
-          <version>3.12.0.GA</version>
-        </dependency>
-        
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.10</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+    <dependency>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-core</artifactId>
+      <version>${dep.jersey}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-server</artifactId>
+      <version>${dep.jersey}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.jersey.contribs</groupId>
+      <artifactId>jersey-guice</artifactId>
+      <version>${dep.jersey}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.sun.jersey</groupId>
+      <artifactId>jersey-json</artifactId>
+      <version>${dep.jersey}</version>
+    </dependency>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>com.cloudbees</groupId>
-				<artifactId>bees-maven-plugin</artifactId>
-                                <version>1.0-SNAPSHOT</version>
-			</plugin>
-		</plugins>
-	</build>
+    <dependency>
+      <groupId>com.fasterxml.jackson.dataformat</groupId>
+      <artifactId>jackson-dataformat-xml</artifactId>
+      <version>${dep.jackson}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>${dep.jackson}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${dep.jackson}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>${dep.jackson}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.module</groupId>
+      <artifactId>jackson-module-jaxb-annotations</artifactId>
+      <version>${dep.jackson}</version>
+    </dependency>
 
-	<pluginRepositories>
-		<pluginRepository>
-			<id>bees-plugins-snapshots</id>
-			<url>http://repository-cloudbees.forge.cloudbees.com/public-snapshot/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-ehcache</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-jpamodelgen</artifactId>
+      <version>${hibernate-jpamodelgen.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.javax.persistence</groupId>
+      <artifactId>hibernate-jpa-2.0-api</artifactId>
+      <version>${hibernate-jpa-api.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.derby</groupId>
+      <artifactId>derby</artifactId>
+      <version>10.4.1.3</version>
+    </dependency>
+
+
+    <!-- Used by JNDI-based testcases -->
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>catalina</artifactId>
+      <version>6.0.18</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.cloudbees</groupId>
+        <artifactId>bees-maven-plugin</artifactId>
+        <version>1.3.2</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>cloudbees-release</id>
+      <url>http://repository-cloudbees.forge.cloudbees.com/public-release/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+
+  </pluginRepositories>
 
 </project>
 

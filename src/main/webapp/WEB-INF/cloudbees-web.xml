@@ -1,15 +1,25 @@
 <?xml version="1.0"?>
 <cloudbees-web-app xmlns="http://www.cloudbees.com/xml/webapp/1">
 
+  <!-- Default to production mode (connects to CloudBees database) -->
   <context-param>
-    <param-name>test</param-name>
-    <param-value>var</param-value>
+    <param-name>mode</param-name>
+    <param-value>prod</param-value>
   </context-param>
-    
+
+  <!-- This is picked up locally when running with: - mvn bees:run -Dbees.environment=local -->
   <environment name="local">
     <context-param>
       <param-name>mode</param-name>
-      <param-value></param-value>
+      <param-value>local</param-value>
+    </context-param>
+  </environment>
+
+  <!-- This is picked up locally when running with: - mvn bees:run -Dbees.environment=prod -->
+  <environment name="prod">
+    <context-param>
+      <param-name>mode</param-name>
+      <param-value>prod</param-value>
     </context-param>
   </environment>
 </cloudbees-web-app>

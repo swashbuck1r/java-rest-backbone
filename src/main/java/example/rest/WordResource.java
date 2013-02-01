@@ -13,7 +13,6 @@ import javax.ws.rs.core.MediaType;
 
 import com.google.inject.Inject;
 
-@Singleton
 @Produces(MediaType.APPLICATION_JSON)
 @Path("/rest/words")
 public class WordResource {
@@ -31,7 +30,6 @@ public class WordResource {
     }
 
     @GET
-    @Path("/")
     public List<Word> list() throws Exception {
         return dict.getWords();
     }
@@ -39,8 +37,7 @@ public class WordResource {
     @POST
     @Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
     @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-    @Path("/")
-    public Word getWord(Word w) throws Exception  {
+    public Word addWord(Word w) throws Exception  {
         return dict.addWord(w);
     }
 }

@@ -1,15 +1,18 @@
 package example.rest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 
-import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com.google.inject.Module;
+import com.google.inject.persist.jpa.JpaPersistModule;
 import com.google.inject.servlet.GuiceServletContextListener;
 
 import example.rest.db.DictionaryDBModule;
-import example.rest.local.DictionaryLocalModule;
 
 public class GuiceRestConfig extends GuiceServletContextListener {
     private ServletContext sc;
@@ -21,17 +24,24 @@ public class GuiceRestConfig extends GuiceServletContextListener {
 
     @Override
     protected Injector getInjector() {
-        AbstractModule dictionaryModule = loadDictionaryModule();
-        return Guice.createInjector(new RestModule(), dictionaryModule);
+    	ArrayList<Module> modules = new ArrayList<Module>();
+    	modules.add(new RestModule());
+    	addDictionaryModules(modules);
+    	
+    	Injector injector = Guice.createInjector(modules);
+    	
+    	return injector;
     }
 
-    private AbstractModule loadDictionaryModule() {
+    private void addDictionaryModules(List<Module> modules) {
         String mode = this.sc.getInitParameter("mode");
         sc.log("Application mode: " + mode);
-        if (mode != null && mode.equals("db")) {
-            return new DictionaryDBModule();
+        if (mode != null && mode.equals("prod")) {
+        	modules.add(new JpaPersistModule("appPU"));
         } else {
-            return new DictionaryLocalModule();
+        	modules.add(new JpaPersistModule("localPU"));
         }
+        
+        modules.add(new DictionaryDBModule());
     }
 }

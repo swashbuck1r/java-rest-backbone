@@ -1,9 +1,5 @@
 package example.rest.db;
 
-import java.util.List;
-
-import org.hibernate.Query;
-
 import javax.persistence.*;
 
 @Entity
@@ -21,19 +17,6 @@ public class PersistentWord {
 
     @Column(name = "type")
     private String type;
-
-    public static PersistentWord findById(String id) {
-        Query q = Utils.getSessionFactory().getCurrentSession()
-                .createQuery("from PersistentWord where id = :id");
-        q.setString("id", id);
-        return (PersistentWord) q.uniqueResult();
-    }
-    
-    public static List<PersistentWord> findAll() {
-        Query q = Utils.getSessionFactory().getCurrentSession()
-                .createQuery("from PersistentWord");
-        return (List<PersistentWord>) q.list();
-    }
 
     public String getId() {
         return id;
