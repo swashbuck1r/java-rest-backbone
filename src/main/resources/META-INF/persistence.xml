@@ -32,7 +32,7 @@
 		<class>example.rest.db.PersistentWord</class>
 
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:derby:target2/derby;create=true" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:derby:target/derby;create=true" />
 			<property name="javax.persistence.jdbc.password" value="pass" />
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
 			<property name="javax.persistence.jdbc.user" value="user" />
