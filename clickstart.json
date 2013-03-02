@@ -1,6 +1,6 @@
 {
     "id": "maven-rest-backbone",
-    "name": "JPA and REST with JavaScript",
+    "name": "JPA and REST with Backbone.js",
     "description" : "Backbone.js with a database-backed RESTful backend and continuous deployment",
     "source": "github",
     "doc-url" : "https://github.com/CloudBees-community/java-rest-backbone/blob/master/README.md",
