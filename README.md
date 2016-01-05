@@ -55,3 +55,4 @@ Note: "mode" is looked up as a ServletContext param by the app
 Restart the app to apply new settings and resource bindings
 
     bees app:restart -a MY_APPID
+
