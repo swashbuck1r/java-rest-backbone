@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
+//a comment
 public class Word implements Serializable {
     @JsonProperty
     public String id;
