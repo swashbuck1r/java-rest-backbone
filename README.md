@@ -1,6 +1,7 @@
 JPA and REST with backbone.js
 ==================
 
+
 Backbone.js (http://backbonejs.org/) is a popular lightweight javascript framework for giving structure to complex javascript client-side applications. 
 This works nicely with restful frameworks at the back end (the back end is a set of restful services). 
 When you launch this ClickStart, it will create a Javascript/Backbone app, a source repo with continuous deployment via Jenkins, and a database.
